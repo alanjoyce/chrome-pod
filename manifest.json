@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Hello World",
+  "name": "Chrome Pod",
   "version": "2",
   "minimum_chrome_version": "23",
   "icons": {
