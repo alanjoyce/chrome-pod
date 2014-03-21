@@ -6,6 +6,8 @@ onload = function() {
         var xmlDoc = $.parseXML(xhr.responseText);
         console.log(xhr.responseText);
         
+        $('#podcastName').html($(($(xmlDoc).find('title'))[0]).text())
+        
         $('#feedResultsList').html('');
         var items = $(xmlDoc).find('item');
         for(var i = 0; i < items.length; i++) {
