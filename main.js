@@ -1,23 +1,13 @@
-/**
- * Listens for the app launching then creates the window
- *
- * @see http://developer.chrome.com/apps/app.runtime.html
- * @see http://developer.chrome.com/apps/app.window.html
- */
-chrome.app.runtime.onLaunched.addListener(function() {
-  // Center window on screen.
-  var screenWidth = screen.availWidth;
-  var screenHeight = screen.availHeight;
-  var width = 500;
-  var height = 300;
-
-  chrome.app.window.create('index.html', {
-    id: "helloWorldID",
-    bounds: {
-      width: width,
-      height: height,
-      left: Math.round((screenWidth-width)/2),
-      top: Math.round((screenHeight-height)/2)
+onload = function() {
+  $("#loadFeed").click(function() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange=function() {
+      if(xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText);
+        $("#feedResults").html(xhr.responseText);
+      }
     }
+    xhr.open("GET", $("#feedURL").val(), true);
+    xhr.send();
   });
-});
+}

@@ -2,11 +2,18 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Hello World</title>
-    <link href="styles/main.css" rel="stylesheet">
-    <link href="styles/reset.css" rel="stylesheet">
+    <title>Chrome Pod</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
-    <h1>Hello wow</h1>
+    Feed URL:
+    <input type="text" id="feedURL" value="http://smithery.org/things.xml">
+    <button id="loadFeed">Load feed</button>
+    <div id="feedResults">
+      results go here
+    </div>
 </body>
 </html>

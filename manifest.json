@@ -7,9 +7,12 @@
     "16": "img/icon_16.png",
     "128": "img/icon_128.png"
   },
+  "permissions": [
+    "http://*/"
+  ],
   "app": {
     "background": {
-      "scripts": ["main.js"]
+      "scripts": ["background.js"]
     }
   }
 }
