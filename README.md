@@ -4,6 +4,7 @@ chrome-pod
 Chrome app for listening to podcasts.
 
 To run this from source:
+
 1. Open Chrome
 2. Navigate to chrome://extensions
 3. Click "Load unpacked extension..."
