@@ -10,16 +10,25 @@ onload = function() {
         var items = $(xmlDoc).find('item');
         for(var i = 0; i < items.length && i < 5; i++) {
           var title = $(items[i]).find('title');
-          var enclosure = $(items[i]).find('enclosure');
           $('#feedResultsList').append(
-            '<li>'
-              + title.text() + '<br />'
-              + '<audio controls class="podcastPlayer">'
+            '<li id="feedResult' + i + '">'
+            + title.text() + '<br />'
+            + '<span num="' + i + '">'
+            + '<button id="play' + i + '">Play</button></span>'
+            + '</li>'
+          );
+          $('#play' + i).click(function() {
+            var enclosure = $(items[$(this).parent().attr('num')]).find('enclosure');
+            var playerSpan = $(this).parent();
+            console.log(enclosure.attr('url'));
+            $(playerSpan).html('');
+            $(playerSpan).append(
+              '<audio controls class="podcastPlayer">'
               + '<source src="' + enclosure.attr('url')
               + '" type="' + enclosure.attr('type') + '">'
               + '</audio>'
-            + '</li>'
-          );
+            );
+          });
         };
       }
     }

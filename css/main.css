@@ -5,3 +5,7 @@ html, body {
 body {
   
 }
+
+.podcastPlayer {
+  width: 100%;
+}
