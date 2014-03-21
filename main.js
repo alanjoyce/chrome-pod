@@ -8,14 +8,14 @@ onload = function() {
         
         $('#feedResultsList').html('');
         var items = $(xmlDoc).find('item');
-        for(var i = 0; i < items.length && i < 5; i++) {
+        for(var i = 0; i < items.length; i++) {
           var title = $(items[i]).find('title');
           $('#feedResultsList').append(
-            '<li id="feedResult' + i + '">'
+            '<li class="feedResult" id="feedResult' + i + '">'
             + title.text() + '<br />'
-            + '<span num="' + i + '">'
-            + '<button id="play' + i + '">Play</button></span>'
-            + '</li>'
+            + '<div class="playArea" num="' + i + '">'
+            + '<button class="playButton" id="play' + i + '">Play</button>'
+            + '</span></li>'
           );
           $('#play' + i).click(function() {
             var enclosure = $(items[$(this).parent().attr('num')]).find('enclosure');
